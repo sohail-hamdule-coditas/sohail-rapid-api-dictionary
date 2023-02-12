@@ -17,7 +17,7 @@ const Definitions: any = async ({ keyword }: IDefinition) => {
       <h3>Definitions:</h3>
       <br />
       {definitionData?.definitions?.map((definitionData, index) => (
-        <>
+        <React.Fragment key={`def-wrapper-${index}`}>
           <p key={`def-${index}`}>
             <strong>Definition:</strong> {definitionData.definition}
           </p>
@@ -25,7 +25,7 @@ const Definitions: any = async ({ keyword }: IDefinition) => {
             <strong>Part of Speech:</strong> {definitionData.partOfSpeech}
           </p>
           <br />
-        </>
+        </React.Fragment>
       ))}
     </div>
   );
